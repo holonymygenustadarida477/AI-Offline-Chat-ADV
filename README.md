@@ -73,7 +73,7 @@ An SD Card must be inserted for the long-term memory to function. The system cre
 When you submit a complex sentence, the ESP32-S3 must compile and test multiple Regex patterns. You will see an `ELIZA: ...` indicator. This is not a fake animation; it represents the actual CPU blocking time required for the NLP engine to calculate its response before rendering it via a typewriter effect.
 
 ### 🔄 System Reset
-If you wish to erase your psychological profile and start fresh, press `ESC` to open the dialog, or simply type *"Memory Wipe"* in the chat. ELIZA will wipe the SD card and reset her context variables.
+If you wish to erase your psychological profile and start fresh, press `ESC` or ``` ` ``` to open the System Menu. From there, you can select the option to wipe the SD card memory and reset her context variables.
 
 ---
 
